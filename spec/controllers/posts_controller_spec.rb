@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # spec/controllers/post_objects_controller_spec.rb
 require 'rails_helper'
 

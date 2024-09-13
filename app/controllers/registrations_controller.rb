@@ -8,9 +8,7 @@ class RegistrationsController < ApplicationController
     user = User.create!(register_params)
     new_activation_key = generate_token(user.id, 62)
     user.update_attribute(:admin_level, 3) if User.all.size <= 1
-    if user.update_attribute(:activation_key, new_activation_key)
-      ActivationMailer.with(user: user).welcome_email.deliver_now
-    end
+    ActivationMailer.with(user:).welcome_email.deliver_now if user.update_attribute(:activation_key, new_activation_key)
     json_response({ message: 'Account registered but activation required' },
                   :created)
   end
@@ -51,10 +49,10 @@ class RegistrationsController < ApplicationController
   def forgot_password
     user = User.find_by(email: params[:email])
     if user
-      new_token = generate_token(user.id, 32, true)
+      new_token = generate_token(user.id, 32, url_safe: true)
       if user.update_attribute(:password_reset_token, new_token)
         user.update_attribute(:password_reset_date, DateTime.now)
-        ActivationMailer.with(user: user).password_reset_email.deliver_now
+        ActivationMailer.with(user:).password_reset_email.deliver_now
       else
         json_response({ errors: user.errors.full_messages }, 401)
       end
@@ -65,9 +63,7 @@ class RegistrationsController < ApplicationController
   def destroy
     user = User.find(params[:id])
     # Only allow the owner of the account or an administrator to destroy the account
-    unless user == @current_user || @current_user.admin_level >= 1
-      return head(401)
-    end
+    return head(401) unless user == @current_user || @current_user.admin_level >= 1
 
     user.destroy
     json_response({ message: 'Account deactivated' })
@@ -76,12 +72,10 @@ class RegistrationsController < ApplicationController
   # Link used in account activation email
   def activate_account
     # Set url variable to the front-end url
-    url = ENV['HOSTNAME'] + '/login'
+    url = "#{ENV['HOSTNAME']}/login"
     user = User.find(params[:id])
 
-    if user.activation_key == params[:activation_key]
-      user.update_attribute(:is_activated, true)
-    end
+    user.update_attribute(:is_activated, true) if user.activation_key == params[:activation_key]
 
     # json_response(message: 'Successfully activated account')
     redirect_to url

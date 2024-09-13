@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe ForumsController, type: :controller do
@@ -21,9 +23,9 @@ RSpec.describe ForumsController, type: :controller do
     let(:valid_attributes) { { name: 'New Forum', subforums: ['Subforum 1'] } }
 
     it 'creates a new forum' do
-      expect {
+      expect do
         post :create, params: { forum: valid_attributes }
-      }.to change(Forum, :count).by(1)
+      end.to change(Forum, :count).by(1)
     end
 
     it 'returns the updated list of forums' do
@@ -58,9 +60,9 @@ RSpec.describe ForumsController, type: :controller do
     let(:forum) { forums.first }
 
     it 'deletes the forum' do
-      expect {
+      expect do
         delete :destroy, params: { id: forum.id }
-      }.to change(Forum, :count).by(-1)
+      end.to change(Forum, :count).by(-1)
     end
 
     it 'returns the updated list of forums' do

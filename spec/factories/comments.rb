@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # spec/factories/comments.rb
 FactoryBot.define do
   factory :comment do
@@ -8,7 +10,7 @@ FactoryBot.define do
 
     trait :with_nested_comments do
       after(:create) do |comment|
-        create_list(:comment, 2, comment: comment)
+        create_list(:comment, 2, comment:)
       end
     end
   end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::API
   include Response
   include ExceptionHandler
@@ -34,7 +36,7 @@ class ApplicationController < ActionController::API
     date_diff = compare_dates(token_date)
 
     if date_diff[:days] >= days && date_diff[:hrs] >= hours &&
-      date_diff[:mins] >= minutes && date_diff[:secns] >= seconds
+       date_diff[:mins] >= minutes && date_diff[:secns] >= seconds
       true
     end
 

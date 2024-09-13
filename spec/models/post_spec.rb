@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # spec/models/post_spec.rb
 require 'rails_helper'
 
@@ -45,7 +47,7 @@ RSpec.describe Post, type: :model do
     end
 
     it '.author_comments_json' do
-      comments = create_list(:comment, 3, post: post)
+      comments = create_list(:comment, 3, post:)
       expect(Post.author_comments_json(comments).count).to eq(3)
     end
 

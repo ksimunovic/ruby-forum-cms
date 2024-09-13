@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # spec/controllers/comments_controller_spec.rb
 require 'rails_helper'
 
@@ -72,9 +74,9 @@ RSpec.describe CommentsController, type: :controller do
 
     context 'when authorized' do
       it 'deletes the comment' do
-        expect {
+        expect do
           delete :destroy, params: { id: comment.id }
-        }.to change(Comment, :count).by(-1)
+        end.to change(Comment, :count).by(-1)
         expect(response).to have_http_status(:ok)
         expect(json_response[:message]).to eq('Comment deleted')
       end

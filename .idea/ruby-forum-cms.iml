@@ -68,7 +68,8 @@
     <orderEntry type="library" scope="PROVIDED" name="i18n (v1.14.5, Remote: ruby-3.1.6-p260) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="io-console (v0.7.2, Remote: ruby-3.1.6-p260) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="irb (v1.14.0, Remote: ruby-3.1.6-p260) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="jaro_winkler (v1.5.6, Remote: ruby-3.1.6-p260) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="json (v2.7.2, Remote: ruby-3.1.6-p260) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="language_server-protocol (v3.17.0.3, Remote: ruby-3.1.6-p260) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="logger (v1.6.1, Remote: ruby-3.1.6-p260) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="loofah (v2.22.0, Remote: ruby-3.1.6-p260) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.8.1, Remote: ruby-3.1.6-p260) [gem]" level="application" />
@@ -102,19 +103,16 @@
     <orderEntry type="library" scope="PROVIDED" name="rainbow (v3.1.1, Remote: ruby-3.1.6-p260) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v13.2.1, Remote: ruby-3.1.6-p260) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rdoc (v6.7.0, Remote: ruby-3.1.6-p260) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="regexp_parser (v2.9.2, Remote: ruby-3.1.6-p260) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="reline (v0.5.10, Remote: ruby-3.1.6-p260) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rexml (v3.3.7, Remote: ruby-3.1.6-p260) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec (v3.13.0, Remote: ruby-3.1.6-p260) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-core (v3.13.1, Remote: ruby-3.1.6-p260) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-expectations (v3.13.3, Remote: ruby-3.1.6-p260) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-mocks (v3.13.1, Remote: ruby-3.1.6-p260) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-rails (v7.0.1, Remote: ruby-3.1.6-p260) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-support (v3.13.1, Remote: ruby-3.1.6-p260) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop (v0.81.0, Remote: ruby-3.1.6-p260) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop-minitest (v0.9.0, Remote: ruby-3.1.6-p260) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop-performance (v1.6.1, Remote: ruby-3.1.6-p260) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop-rails (v2.5.2, Remote: ruby-3.1.6-p260) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop-rails-omakase (v1.0.0, Remote: ruby-3.1.6-p260) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop (v1.66.1, Remote: ruby-3.1.6-p260) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop-ast (v1.32.3, Remote: ruby-3.1.6-p260) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby-progressbar (v1.13.0, Remote: ruby-3.1.6-p260) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="securerandom (v0.3.1, Remote: ruby-3.1.6-p260) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="shoulda-matchers (v6.4.0, Remote: ruby-3.1.6-p260) [gem]" level="application" />
@@ -122,7 +120,7 @@
     <orderEntry type="library" scope="PROVIDED" name="thor (v1.3.2, Remote: ruby-3.1.6-p260) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="timeout (v0.4.1, Remote: ruby-3.1.6-p260) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v2.0.6, Remote: ruby-3.1.6-p260) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="unicode-display_width (v1.8.0, Remote: ruby-3.1.6-p260) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="unicode-display_width (v2.5.0, Remote: ruby-3.1.6-p260) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="uri (v0.13.1, Remote: ruby-3.1.6-p260) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="useragent (v0.16.10, Remote: ruby-3.1.6-p260) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="webrick (v1.8.1, Remote: ruby-3.1.6-p260) [gem]" level="application" />

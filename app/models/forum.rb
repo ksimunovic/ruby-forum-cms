@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class Forum < ApplicationRecord
   has_many :subforums, dependent: :destroy
   has_many :posts, dependent: :destroy
   validates :name, length: { in: 3..32 }, presence: true,
-            uniqueness: { case_sensitive: false }
+                   uniqueness: { case_sensitive: false }
   before_save { name.downcase! }
 
   # Grabs all posts without a subforum, while also limiting the amount posts retrieved
