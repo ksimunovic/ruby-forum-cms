@@ -1,5 +1,7 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
+require 'shoulda/matchers'
+require 'simplecov'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 # Prevent database truncation if the environment is production
@@ -38,7 +40,7 @@ module JsonHelper
     JSON.parse(response.body, symbolize_names: true)
   end
 end
-
+# SimpleCov.start
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_paths = [
@@ -74,6 +76,13 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   config.include FactoryBot::Syntax::Methods
+
+  Shoulda::Matchers.configure do |matcher_config|
+    matcher_config.integrate do |with|
+      with.test_framework :rspec
+      with.library :rails
+    end
+  end
 
   config.include JsonHelper, type: :controller
 end
