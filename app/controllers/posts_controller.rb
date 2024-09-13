@@ -11,9 +11,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    return if suspended(@current_user.can_post_date)
+    return if suspended(current_user.can_post_date)
 
-    post = @current_user.posts.build(post_params)
+    post = current_user.posts.build(post_params)
     if post.save
       json_response(post: post.post_json)
     else
@@ -23,7 +23,7 @@ class PostsController < ApplicationController
 
   def update
     # Only allow the owner of the post or an administrator to update the post
-    unless @post.author == @current_user || @current_user.admin_level >= 1
+    unless @post.author == current_user || current_user.admin_level >= 1
       return json_response({ errors: 'Account not Authorized' }, 401)
     end
 
@@ -36,7 +36,7 @@ class PostsController < ApplicationController
 
   def destroy
     # Only allow the owner of the post or an administrator to destroy the post
-    unless @post.author == @current_user || @current_user.admin_level >= 1
+    unless @post.author == current_user || current_user.admin_level >= 1
       return json_response({ errors: 'Account not Authorized' }, 401)
     end
 
@@ -72,6 +72,8 @@ class PostsController < ApplicationController
   end
 
   def suspended(date)
+    return false if date.nil?
+
     if date > DateTime.now
       json_response(errors: ['Your posting communications are still suspended'])
       return true
